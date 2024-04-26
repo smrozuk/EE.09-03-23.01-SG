@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id = "box">
+        <div id = "wynik"></div>
+            <div id="przycisk">
+                <button id="1" class="przyciski" value="1" onclick="liczenie(this.value)">1</button>
+                <button id="2" class="przyciski" value="2" onclick="liczenie(this.value)">2</button>
+                <button id="3" class="przyciski" value="3" onclick="liczenie(this.value)">3</button>
+                <button id="4" class="przyciski" value="4" onclick="liczenie(this.value)">4</button>
+                <button id="5" class="przyciski" value="5" onclick="liczenie(this.value)">5</button>
+                <button id="6" class="przyciski" value="6" onclick="liczenie(this.value)">6</button>
+                <button id="7" class="przyciski" value="7" onclick="liczenie(this.value)">7</button>
+                <button id="8" class="przyciski" value="8" onclick="liczenie(this.value)">8</button>
+                <button id="9" class="przyciski" value="9" onclick="liczenie(this.value)">9</button>
+                <button id="0" class="przyciski" value="0" onclick="liczenie(this.value)">0</button>
+                <button id="dodanie" class="przyciski" value="+" onclick="liczenie(this.value)">+</button>
+                <button id="odejmowanie" class="przyciski" value="-" onclick="liczenie(this.value)">-</button>
+                <button id="mnozenie" class="przyciski" value="*" onclick="liczenie(this.value)">×</button>
+                <button id="dzielenie" class="przyciski" value="/" onclick="liczenie(this.value)">÷</button>
+                <button id="rownasie" class="przyciski" value="=" onclick="liczenie(this.value)">=</button>
+                <button id="czysc" value=" " onclick="czysc()">WYCZYSC</button>
+            </div>
+    </div>
+
+    <script>
+        const wynik = document.querySelector("#wynik");
+        const przyciski = document.querySelectorAll(".przyciski");
+        let dzialanie = '';
+        let zero = '';
+        function liczenie(value) {
+            if (value === '=') {
+                wynik.innerHTML = eval(dzialanie);
+                zero = wynik.innerHTML;
+                dzialanie = '';
+            } else {
+                if(value === '+' || value=== "-" || value=== "*" || value=== "/"){
+                    if(dzialanie === ''){
+                        dzialanie = zero;
+                    }
+                }
+                dzialanie += value;
+                wynik.innerHTML = dzialanie;
+            }
+        }
+        function czysc() {
+            zero = '';
+            wynik.innerHTML = '';
+        }
+    </script>
+</body>
+</html>
