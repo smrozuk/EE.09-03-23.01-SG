@@ -25,8 +25,8 @@ body{
     background-color: #D81B60;
     color: white;
     width: 20%;
-    padding: 5%;
-    margin: 10%;
+    padding: 5px;
+    margin: 10px;
     box-shadow: 15px 15px 12px dimgray;
 
 }
@@ -34,10 +34,12 @@ body{
 #calosc{
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
 }
 
 .ukryty{
     display: none;
+    color: black;
 }
 
 h5,q{
